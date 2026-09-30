@@ -1,4 +1,4 @@
-package org.example.grupp1systemarkitekturlab3;
+package org.example.pet;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
