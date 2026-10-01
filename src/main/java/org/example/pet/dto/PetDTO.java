@@ -15,13 +15,16 @@ public class PetDTO {
     @Max(value = 100, message = "Hunger level must be between 0 and 100")
     @Min(value = 0, message = "Hunger level must be between 0 and 100")
     private int hungerLevel;
+
     @Max(value = 100, message = "Happiness level must be between 0 and 100")
     @Min(value = 0, message = "Happiness level must be between 0 and 100")
     private int happiness;
 
-    //Constructor
+    // No-arg constructor
     public PetDTO() {
     }
+
+    //Constructor
     public PetDTO(String name, String species, int hungerLevel, int happiness) {
         this.name = name;
         this.species = species;
