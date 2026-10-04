@@ -10,7 +10,6 @@ import org.example.pet.service.PetService;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.UriInfo;
 
-import java.net.URI;
 import java.util.List;
 
 
@@ -84,4 +83,6 @@ import java.util.List;
             return pet;
         }
 
+        public static class NotFoundExceptionMapper {
+        }
     }
