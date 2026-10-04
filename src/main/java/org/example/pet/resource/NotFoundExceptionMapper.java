@@ -10,6 +10,7 @@ import jakarta.ws.rs.ext.Provider;
 
 import java.util.Map;
 
+/** Converts a missing pet error into a JSON response with HTTP status 404. */
 @Provider
 public class NotFoundExceptionMapper implements ExceptionMapper<NotFoundException> {
 

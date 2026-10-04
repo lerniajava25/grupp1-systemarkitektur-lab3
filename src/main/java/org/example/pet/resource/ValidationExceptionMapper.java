@@ -8,6 +8,9 @@ import jakarta.ws.rs.ext.Provider;
 
 import java.util.Map;
 
+/**
+ * Converts a validation error into a JSON response with HTTP status 400.
+ */
 @Provider
 public class ValidationExceptionMapper
         implements ExceptionMapper<ConstraintViolationException> {
