@@ -115,4 +115,55 @@ public class PetServiceTest {
 
         assertEquals(null, service.getPet(id));
     }
+
+    @Test
+    void feedingUnknownPetReturnsNull() {
+        PetService service = new PetService();
+
+        PetDTO result = service.feedPet(999);
+
+        assertEquals(null, result);
+    }
+
+    @Test
+    void playingWithUnknownPetReturnsNull() {
+        PetService service = new PetService();
+
+        PetDTO result = service.playWithPet(999);
+
+        assertEquals(null, result);
+    }
+
+    @Test
+    void deletingUnknownPetReturnsFalse() {
+        PetService service = new PetService();
+
+        boolean result = service.deletePet(999);
+
+        assertEquals(false, result);
+    }
+
+    @Test
+    void feedingPetDoesNotReduceHungerBelowZero() {
+        PetService service = new PetService();
+
+        PetDTO pet = new PetDTO("Luna", "Cat", 5, 50);
+        long id = service.addPet(pet);
+
+        PetDTO result = service.feedPet(id);
+
+        assertEquals(0, result.getHungerLevel());
+    }
+
+    @Test
+    void playingWithPetDoesNotIncreaseHappinessAbove100() {
+        PetService service = new PetService();
+
+        PetDTO pet = new PetDTO("Luna", "Cat", 50, 95);
+        long id = service.addPet(pet);
+
+        PetDTO result = service.playWithPet(id);
+
+        assertEquals(100, result.getHappiness());
+    }
 }
