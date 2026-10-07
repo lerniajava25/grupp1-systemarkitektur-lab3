@@ -6,10 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PetServiceTest {
 
-    @Test
-    void serviceCanBeCreated() {
-        PetService service = new PetService();
-    }
+
     @Test
     void canCreatePet() {
         PetService service = new PetService();
@@ -20,18 +17,18 @@ public class PetServiceTest {
 
         PetDTO savedPet = service.getPet(id);
 
-        assertEquals("Luna", savedPet.getName());
-        assertEquals("Cat", savedPet.getSpecies());
-        assertEquals(50, savedPet.getHungerLevel());
-        assertEquals(80, savedPet.getHappiness());
+        assertEquals("Luna", savedPet.name());
+        assertEquals("Cat", savedPet.species());
+        assertEquals(50, savedPet.hungerLevel());
+        assertEquals(80, savedPet.happiness());
 
         PetDTO fedPet = service.feedPet(id);
 
-        assertEquals(40, fedPet.getHungerLevel());
+        assertEquals(40, fedPet.hungerLevel());
 
         PetDTO playedPet = service.playWithPet(id);
 
-        assertEquals(90, playedPet.getHappiness());
+        assertEquals(90, playedPet.happiness());
 
         boolean deleted = service.deletePet(id);
 
@@ -67,7 +64,7 @@ public class PetServiceTest {
 
         PetDTO updatedPet = service.getPet(id);
 
-        assertEquals(0, updatedPet.getHungerLevel());
+        assertEquals(0, updatedPet.hungerLevel());
     }
 
     @Test
@@ -91,7 +88,7 @@ public class PetServiceTest {
 
         PetDTO updatedPet = service.getPet(id);
 
-        assertEquals(100, updatedPet.getHappiness());
+        assertEquals(100, updatedPet.happiness());
     }
 
     @Test
@@ -152,7 +149,7 @@ public class PetServiceTest {
 
         PetDTO result = service.feedPet(id);
 
-        assertEquals(0, result.getHungerLevel());
+        assertEquals(0, result.hungerLevel());
     }
 
     @Test
@@ -164,6 +161,6 @@ public class PetServiceTest {
 
         PetDTO result = service.playWithPet(id);
 
-        assertEquals(100, result.getHappiness());
+        assertEquals(100, result.happiness());
     }
 }

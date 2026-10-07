@@ -51,10 +51,10 @@ public class PetService {
             }
 
             PetDTO updatedPet = new PetDTO(
-                    pet.getName(),
-                    pet.getSpecies(),
-                    Math.max(0, pet.getHungerLevel() - 10),
-                    pet.getHappiness()
+                    pet.name(),
+                    pet.species(),
+                    Math.max(0, pet.hungerLevel() - 10),
+                    pet.happiness()
             );
             pets.put(id, updatedPet);
             return updatedPet;
@@ -73,10 +73,10 @@ public class PetService {
             }
 
             PetDTO updatedPet = new PetDTO(
-                    pet.getName(),
-                    pet.getSpecies(),
-                    pet.getHungerLevel(),
-                    Math.min(100, pet.getHappiness() + 10)
+                    pet.name(),
+                    pet.species(),
+                    pet.hungerLevel(),
+                    Math.min(100, pet.happiness() + 10)
             );
             pets.put(id, updatedPet);
             return updatedPet;
