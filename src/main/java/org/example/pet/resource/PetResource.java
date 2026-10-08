@@ -83,6 +83,4 @@ import java.util.List;
             return pet;
         }
 
-        public static class NotFoundExceptionMapper {
-        }
     }
